@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+        <style>
+      body { font-family: Arial, sans-serif; padding: 16px; }
+      video { width: 100%; max-width: 480px; background: #000; }
+      canvas { display:block; margin-top:8px; max-width:480px; }
+      button { margin-right:8px; }
+    </style>
 </head>
 <body>
-    
-    
+        <!-- Video shows live camera -->
+    <video id="camera" autoplay playsinline></video>
+
+    <div style="margin-top:8px;">
+      <button id="startBtn">Start camera</button>
+      <button id="captureBtn">Capture photo</button>
+      <button id="stopBtn">Stop camera</button>
+    </div>
+
+    <!-- Captured photo -->
+    <canvas id="photo" hidden></canvas>
+
 
     <script src="script.js"></script>
 </body>
