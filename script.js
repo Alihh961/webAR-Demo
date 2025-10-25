@@ -26,18 +26,16 @@ async function startCamera() {
   }
 }
 
-choiceButtons.forEach(btn => {
-  btn.addEventListener('click', async (e) => {
-    const choice = e.target.dataset.choice;
-    console.log("User selected:", choice);
+document.addEventListener('DOMContentLoaded', () => {
+  const choiceButtons = document.querySelectorAll('.choiceBtn');
 
-    // You can change model based on choice if needed
-    // viewer.src = choice === 'Choice 1' ? 'plate.glb' : 'cup.glb';
-
-    menuScreen.style.display = 'none';
-    cameraContainer.style.display = 'block';
-    viewer.style.display = 'none';
-
-    await startCamera();
+  choiceButtons.forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const choice = btn.dataset.choice;
+      menuScreen.style.display = 'none';
+      cameraContainer.style.display = 'block';
+      viewer.style.display = 'none';
+      await startCamera();
+    });
   });
 });
